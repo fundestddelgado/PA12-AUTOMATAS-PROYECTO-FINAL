@@ -2,11 +2,11 @@
 
 # **Automatas - Mantenimiento Predictivo para Centros de Mecanizado**
 
-## **Resumen**
-
 **Automatas** es un sistema inteligente de mantenimiento predictivo que utiliza machine learning para anticipar fallos en herramientas y máquinas CNC antes de que ocurran. Mediante el análisis en tiempo real de parámetros operativos (temperatura, velocidad, torque, desgaste), el sistema predice probabilidades de fallo y genera recomendaciones accionables para intervenciones proactivas.
 
 **Resultado**: Reducción de paros no planificados, optimización de costos operacionales y aumento de disponibilidad de máquinas.
+
+https://automataspa.streamlit.app/
 
 ---
 
