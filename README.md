@@ -1,8 +1,8 @@
 # PA12-AUTOMATAS-PROYECTO-FINAL
 
-# 🔧 **Automatas - Mantenimiento Predictivo para Centros de Mecanizado**
+# **Automatas - Mantenimiento Predictivo para Centros de Mecanizado**
 
-## 📋 **Resumen Ejecutivo**
+## **Resumen Ejecutivo**
 
 **Automatas** es un sistema inteligente de mantenimiento predictivo que utiliza machine learning para anticipar fallos en herramientas y máquinas CNC antes de que ocurran. Mediante el análisis en tiempo real de parámetros operativos (temperatura, velocidad, torque, desgaste), el sistema predice probabilidades de fallo y genera recomendaciones accionables para intervenciones proactivas.
 
@@ -10,7 +10,7 @@
 
 ---
 
-## 🎯 **Planteamiento del Problema**
+## **Planteamiento del Problema**
 
 ### Contexto Industrial
 
@@ -32,27 +32,27 @@ Un sistema que:
 
 ---
 
-## 🎓 **Objetivos del Proyecto**
+## **Objetivos del Proyecto**
 
 ### Objetivos Generales
 
-✅ Desarrollar un modelo de predicción de fallos con alta precisión
-✅ Implementar explicabilidad mediante técnicas de IA interpretable
-✅ Crear interfaz intuitiva para operadores sin conocimiento técnico
-✅ Construir sistema de feedback para mejora continua
+- Desarrollar un modelo de predicción de fallos con alta precisión
+- Implementar explicabilidad mediante técnicas de IA interpretable
+- Crear interfaz intuitiva para operadores sin conocimiento técnico
+- Construir sistema de feedback para mejora continua
 
 ### Objetivos Específicos
 
-✅ Entrenar modelos de ML (RandomForest, GradientBoosting, LogisticRegression)
-✅ Integrar SHAP para interpretabilidad de predicciones
-✅ Generar recomendaciones basadas en reglas físicas
-✅ Implementar logging automático de predicciones y feedback
-✅ Crear dashboard interactivo con Streamlit
-✅ Versionar modelos con historial de mejoras
+- Entrenar modelos de ML (RandomForest, GradientBoosting, LogisticRegression)
+- Integrar SHAP para interpretabilidad de predicciones
+- Generar recomendaciones basadas en reglas físicas
+- Implementar logging automático de predicciones y feedback
+- Crear dashboard interactivo con Streamlit
+- Versionar modelos con historial de mejoras
 
 ---
 
-## 🛠️ **Herramientas Utilizadas**
+## **Herramientas Utilizadas**
 
 ### **Backend / Machine Learning**
 
@@ -90,21 +90,21 @@ Un sistema que:
 
 ---
 
-## 📊 **Arquitectura del Proyecto**
+## **Arquitectura del Proyecto**
 
 ```
 ProyectoFinalSI/
 │
-├── 📁 app/                           # Aplicación Streamlit
+├── app/                           # Aplicación Streamlit
 │   └── streamlit_app.py             # UI principal con 4 pestañas
 │
-├── 📁 src/
-│   ├── 📁 data/                     # Módulo de datos
+├── src/
+│   ├── data/                     # Módulo de datos
 │   │   ├── data_loader.py          # Carga y normalización
 │   │   ├── preprocess.py           # Feature engineering
 │   │   └── __init__.py
 │   │
-│   ├── 📁 ml/                       # Módulo de machine learning
+│   ├── ml/                       # Módulo de machine learning
 │   │   ├── train.py                # Entrenamiento de modelos
 │   │   ├── recommendation.py       # Motor de recomendaciones
 │   │   ├── shap_utils.py          # Explicabilidad SHAP
@@ -113,32 +113,33 @@ ProyectoFinalSI/
 │   │
 │   └── __init__.py
 │
-├── 📁 models/                        # Modelos entrenados
+├── models/                        # Modelos entrenados
 │   ├── failure_binary_model.joblib  # Modelo predictor
 │   ├── failure_binary_metrics.joblib # Métricas y AUC
 │   ├── failure_multilabel_models.joblib # Modos específicos
-│   └── 📁 versions/                # Historial de versiones
+│   └── versions/                # Historial de versiones
 │
-├── 📁 logs/                          # Histórico en producción
+├── logs/                          # Histórico en producción
 │   └── predicciones.csv            # Log de predicciones + feedback
 │
-├── 📁 data/                          # Datos de entrada
+├── data/                          # Datos de entrada
 │   ├── ai4i2020.csv               # Dataset original
-│   └── 📁 additional/              # Datos adicionales etiquetados
+│   └── additional/              # Datos adicionales etiquetados
 │
-├── 📁 tests/                         # Tests unitarios
+├── tests/                         # Tests unitarios
 │   ├── test_train.py
 │   ├── test_preprocess.py
 │   ├── test_recommendation.py
 │   ├── test_shap_utils.py
 │   ├── test_streamlit_logging.py
 │   └── test_augment_and_predlog.py
-├── 📄 requirements.txt               # Dependencias Python
+│
+├── requirements.txt               # Dependencias Python
 ```
 
 ---
 
-## 🚀 **Resultados del Proyecto**
+## **Resultados del Proyecto**
 
 ### **1. Modelo Predictivo**
 
@@ -180,9 +181,9 @@ ProyectoFinalSI/
 - **Clasificadas por severidad**: Alto (rojo), Medio (naranja), Bajo (verde)
 - **Específicas**: No solo "hay riesgo" sino "reemplaza herramienta porque desgaste ≥ 200 min"
 
-  ***
+---
 
-## 🌱 **Impacto y Sostenibilidad**
+## **Impacto y Sostenibilidad**
 
 - **Disponibilidad y resiliencia**: Menos paros no planificados, mayor continuidad operativa y uso eficiente de turnos.
 - **Eficiencia energética**: Mantener potencia y torque en zona segura reduce consumos y picos innecesarios.
@@ -192,7 +193,7 @@ ProyectoFinalSI/
 
 ---
 
-## 📈 **Métricas y Performance**
+## **Métricas y Performance**
 
 ### **Desempeño del Modelo**
 
@@ -221,9 +222,9 @@ F1-Score         | 0.90
 
 ---
 
-## 🎯 **Funcionalidades Clave**
+## **Funcionalidades Clave**
 
-### ✨ **Feature 1: Predicción en Tiempo Real**
+### **Feature 1: Predicción en Tiempo Real**
 
 ```
 Input: Temperatura, RPM, Torque, Desgaste, Tipo
@@ -233,7 +234,7 @@ Output:
   - Confianza del modelo
 ```
 
-### ✨ **Feature 2: Explicabilidad SHAP**
+### **Feature 2: Explicabilidad SHAP**
 
 ```
 Muestra cómo cada parámetro contribuye a la predicción:
@@ -242,7 +243,7 @@ Muestra cómo cada parámetro contribuye a la predicción:
   Wear: +0.182 (AUMENTA riesgo)
 ```
 
-### ✨ **Feature 3: Motor de Recomendaciones**
+### **Feature 3: Motor de Recomendaciones**
 
 ```
 Basado en 5 reglas:
@@ -253,7 +254,7 @@ Basado en 5 reglas:
   5. Prob_fallo ≥ 50% → Inspección preventiva
 ```
 
-### ✨ **Feature 4: Feedback y Mejora**
+### **Feature 4: Feedback y Mejora**
 
 ```
 Usuario predice → Sistema predice fallo con prob X
@@ -261,7 +262,7 @@ Usuario después marca: "Sí hubo fallo" o "No hubo fallo"
 Sistema registra en logs para auditoría y mejora futura
 ```
 
-### ✨ **Feature 5: Análisis Histórico**
+### **Feature 5: Análisis Histórico**
 
 ```
 - Evolución temporal de riesgo
@@ -272,16 +273,16 @@ Sistema registra en logs para auditoría y mejora futura
 
 ---
 
-## 🔍 **Validación y Testing**
+## **Validación y Testing**
 
 ### **Tests Unitarios** (6 archivos)
 
-- ✅ `test_train.py`: Entrenamiento de modelos
-- ✅ `test_preprocess.py`: Feature engineering
-- ✅ `test_recommendation.py`: Generación de recomendaciones
-- ✅ `test_shap_utils.py`: Cálculo de explicabilidad
-- ✅ `test_streamlit_logging.py`: Logging de predicciones
-- ✅ `test_augment_and_predlog.py`: Augmentación de datos
+- `test_train.py`: Entrenamiento de modelos
+- `test_preprocess.py`: Feature engineering
+- `test_recommendation.py`: Generación de recomendaciones
+- `test_shap_utils.py`: Cálculo de explicabilidad
+- `test_streamlit_logging.py`: Logging de predicciones
+- `test_augment_and_predlog.py`: Augmentación de datos
 
 ### **Validación de Datos**
 
@@ -292,7 +293,7 @@ Sistema registra en logs para auditoría y mejora futura
 
 ---
 
-## 🚀 **Deployment**
+## **Deployment**
 
 ### **Opción 1: Streamlit Cloud (Recomendado)**
 
@@ -310,9 +311,15 @@ streamlit run app/streamlit_app.py
 # Accede en: http://localhost:8501
 ```
 
+### **Requisitos de Producción**
+
+- Python 3.10+
+- 500MB RAM (mínimo)
+- Conexión a internet (para Streamlit Cloud)
+
 ---
 
-## 📚 **Variables y Umbrales Críticos**
+## **Variables y Umbrales Críticos**
 
 | Variable                   | Rango Seguro           | Umbral Crítico     | Modo de Fallo           |
 | -------------------------- | ---------------------- | ------------------ | ----------------------- |
