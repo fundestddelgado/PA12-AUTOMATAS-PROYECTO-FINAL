@@ -133,11 +133,7 @@ ProyectoFinalSI/
 │   ├── test_shap_utils.py
 │   ├── test_streamlit_logging.py
 │   └── test_augment_and_predlog.py
-│
 ├── 📄 requirements.txt               # Dependencias Python
-├── 📄 README.md                      # Guía general
-├── 📄 DEPLOY.md                      # Guía de deployment
-└── 📄 README_PROYECTO.md            # Este documento
 ```
 
 ---
