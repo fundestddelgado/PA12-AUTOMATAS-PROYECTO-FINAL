@@ -15,6 +15,7 @@ MULTI_PATH = os.path.join(MODELS_DIR, 'failure_multilabel_models.joblib')
 
 app = FastAPI(title="API Mantenimiento Predictivo", version="1.1")
 model = joblib.load(MODEL_PATH)
+# Modelos multilabel se exponen solo vía endpoint /predict_modes; la UI Streamlit no los usa
 multi_models = joblib.load(MULTI_PATH) if os.path.exists(MULTI_PATH) else None
 
 class PredictRequest(BaseModel):
