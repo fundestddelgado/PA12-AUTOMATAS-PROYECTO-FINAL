@@ -70,6 +70,8 @@ def augment_dataset(df: pd.DataFrame, n: int = 1000, seed: int = 42, extremes_fr
                    targeted_frac: float = 0.0) -> pd.DataFrame:
     """Genera N filas sintéticas basadas en df.
 
+    Nota: utilidad de aumento sintético pensada para experimentos/tests; la UI actual no la usa.
+
     - Mantiene la proporción de fallos de Machine failure (si se requiere).
     - una fracción `extremes_frac` se genera con valores fuera de rango para algunas columnas.
     - Devuelve un DataFrame con n filas generadas que pueden ser concatenadas al dataset original.
