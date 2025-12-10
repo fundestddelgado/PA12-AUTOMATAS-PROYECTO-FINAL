@@ -42,7 +42,7 @@ except Exception:
 
 MODELS_DIR = os.path.join(os.path.dirname(__file__), "..", "models")
 MODEL_PATH = os.path.join(MODELS_DIR, 'failure_binary_model.joblib')
-MULTI_PATH = os.path.join(MODELS_DIR, 'failure_multilabel_models.joblib')
+MULTI_PATH = os.path.join(MODELS_DIR, 'failure_multilabel_models.joblib')  # Implementación futura/solo API
 METRICS_PATH = os.path.join(MODELS_DIR, 'failure_binary_metrics.joblib')
 
 # Utilidades y helpers (definidos antes de main para evitar NameError)
@@ -59,7 +59,7 @@ FEEDBACK_LOG = os.path.join(LOG_PATH, 'feedback.csv')
 @st.cache_resource
 def load_models():
     model = joblib.load(MODEL_PATH)
-    # Nota: se carga multilabel por compatibilidad futura, pero la UI actual no lo usa
+    # Multilabel se carga solo por compatibilidad/futuro; la UI actual de Streamlit no lo utiliza
     multi = joblib.load(MULTI_PATH) if os.path.exists(MULTI_PATH) else None
     return model, multi
 
