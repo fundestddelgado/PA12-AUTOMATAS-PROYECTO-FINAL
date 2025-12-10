@@ -28,7 +28,7 @@ if ROOT_DIR not in sys.path:
     sys.path.insert(0, ROOT_DIR)
 
 from src.data.data_loader import engineer_features, normalize_columns, load_dataset, find_dataset
-from src.data.data_loader import augment_dataset
+from src.data.data_loader import augment_dataset  # Importado para posible uso futuro; la UI actual no lo llama
 from src.ml.recommendation import generate_recommendations
 from src.ml.shap_utils import shap_for_instance
 from src.ml import train as train_module
