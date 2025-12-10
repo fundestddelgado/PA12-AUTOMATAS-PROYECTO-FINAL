@@ -171,7 +171,8 @@ def train_binary(df: pd.DataFrame):
 
 
 def train_multilabel(df: pd.DataFrame):
-    # Entrena un RandomForest independiente por cada etiqueta multilabel
+    # Entrena un RandomForest independiente por cada etiqueta multilabel.
+    # Nota: pensado para diagnóstico futuro y el endpoint /predict_modes de la API; la UI Streamlit no lo usa.
     models = {}
     metrics = {}
     
@@ -345,7 +346,7 @@ def main():
     else:
         print(f"\n5. No se reemplaza el modelo de producción: AUC actual {current_auc} >= nueva AUC {new_auc}")
     
-    # Entrenar modelos multilabel
+    # Entrenar modelos multilabel (diagnóstico futuro / API); la UI actual no los consume
     print("\n5. Entrenando modelos multilabel...")
     multi_models, multi_metrics = train_multilabel(df)
     
