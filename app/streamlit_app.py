@@ -16,8 +16,8 @@ st.set_page_config(
     layout="wide",
     initial_sidebar_state="expanded",
     menu_items={
-        'Get Help': 'https://github.com/jlbjulio/mantenimiento-predictivo',
-        'Report a bug': 'https://github.com/jlbjulio/mantenimiento-predictivo/issues',
+        'Get Help': 'https://github.com/jlbjulio/Automatas',
+        'Report a bug': 'https://github.com/jlbjulio/Automatas/issues',
         'About': '# Automatas - Mantenimiento Predictivo para Centros de Mecanizado\nVersion 1.0 - Nov 2025'
     }
 )
