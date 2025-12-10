@@ -38,6 +38,7 @@ except Exception:
     # Permitir fallback si el helper más reciente no está disponible (ej.: despliegues antiguos)
     from src.ml.combine_feedback import load_predictions, load_feedback, combine_predictions_with_feedback, save_labeled_data
     upgrade_pred_log = None
+# Estas utilidades están importadas por compatibilidad, pero la app no las invoca hoy
 
 MODELS_DIR = os.path.join(os.path.dirname(__file__), "..", "models")
 MODEL_PATH = os.path.join(MODELS_DIR, 'failure_binary_model.joblib')
@@ -58,6 +59,7 @@ FEEDBACK_LOG = os.path.join(LOG_PATH, 'feedback.csv')
 @st.cache_resource
 def load_models():
     model = joblib.load(MODEL_PATH)
+    # Nota: se carga multilabel por compatibilidad futura, pero la UI actual no lo usa
     multi = joblib.load(MULTI_PATH) if os.path.exists(MULTI_PATH) else None
     return model, multi
 
