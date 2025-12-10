@@ -1,6 +1,9 @@
 """
 Script para combinar predicciones.csv con feedback.csv y generar dataset etiquetado.
 Este dataset puede ser usado para reentrenar el modelo con datos reales del usuario.
+
+Nota: la UI de Streamlit actual no invoca estas funciones; se mantienen para usos futuros
+o integraciones externas (API/tests) que requieran fusionar feedback y predicciones.
 """
 
 import os
