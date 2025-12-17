@@ -6,7 +6,7 @@ Este repositorio está organizado en dos módulos principales:
 
 ### 📁 Carpeta _Hackaton SIC 2025_
 
-**Descripción:** Sistema de mantenimiento predictivo con diagnóstico multilabel avanzado. Incluye calibración de probabilidades inteligente, motor de recomendaciones causales, 6 pestañas interactivas, API REST funcional y logging robusto con protección de datos.
+**Descripción:** Sistema inteligente de mantenimiento predictivo diseñado para centros CNC en recuperación post-pandemia. Incluye diagnóstico multilabel avanzado, calibración de probabilidades inteligente, motor de recomendaciones causales basado en datos, 6 pestañas interactivas, API REST funcional y logging robusto con protección de datos.
 
 - **Tecnologías clave:** Python 3.10+, scikit-learn (GradientBoosting, RandomForest), Streamlit 1.31.0, Plotly, FastAPI, pandas, NumPy, joblib.
 
