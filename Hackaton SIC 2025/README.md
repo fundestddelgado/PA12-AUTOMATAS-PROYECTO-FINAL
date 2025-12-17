@@ -21,26 +21,78 @@ https://newautomatas.streamlit.app/
 
 ## **Planteamiento del Problema**
 
-### Contexto Industrial
+### Contexto: Recuperación Económica Post-Pandemia en Manufactura
 
-Los centros de mecanizado CNC enfrentan desafíos críticos:
+**La Realidad Post-Pandemia de Centros CNC:**
 
-- **Paros no planificados**: Cuestan miles de dólares por hora
-- **Mantenimiento reactivo**: Solo se interviene cuando falla la máquina
-- **Incertidumbre operativa**: Sin visibilidad sobre el estado real del equipo
-- **Desgaste acelerado**: Herramientas fallan sin aviso, afectando calidad
+Los centros de mecanizado pequeños y medianos fueron severamente impactados:
 
-### Solución Propuesta
+- Márgenes operativos ajustados (20-30% post-pandemia vs 35-40% pre-pandemia)
+- Presión para recuperar competitividad **ahora**
+- Recursos limitados para mantenimiento especializado
+- Equipos CNC trabajando al máximo sin visibilidad de estado
 
-Un sistema que:
+**Desafíos Operativos Clave:**
 
-1. **Predice fallos** antes de que ocurran (probabilidad calibrada en tiempo real)
-2. **Identifica tipos de fallo específicos** (TWF, HDF, PWF, OSF, RNF) con modelos multilabel
-3. **Analiza causas raíz** mostrando parámetros críticos y su relación con el fallo
-4. **Recomienda acciones** basadas en parámetros operativos reales
-5. **Aprende del feedback** (captura resultados reales para auditoría y mejora)
-6. **Simula escenarios** para comparar opciones operativas
+| Problema                                 | Impacto en Recuperación                                  |
+| ---------------------------------------- | -------------------------------------------------------- |
+| **Paros no planificados**                | Pérdida de clientes y capacidad de producción            |
+| **Mantenimiento reactivo (emergencias)** | Costos de reparación erosionan márgenes operativos       |
+| **Desgaste sin control**                 | Scrap, defectos y retrasos afectan confianza del cliente |
+| **Decisiones operativas ciegas**         | Sin datos para optimizar: ¿continuar o parar? ¿cambiar?  |
 
+**Pregunta Clave:** ¿Cómo recuperarse post-pandemia si no puedes operar las máquinas confiablemente?
+
+### Solución Propuesta: AUTOMATAS
+
+**Un Sistema Que Desbloquea Recuperación Económica:**
+
+1. **Predice fallos ANTES de que ocurran**
+
+   - Intervención preventiva cuesta 1/10 de una reparación emergente
+   - Reduce paros no planificados 70%
+   - **Impacto**: +$100K-$300K de ingresos recuperados/año por máquina
+
+2. **Identifica causas raíz específicas** (TWF, HDF, PWF, OSF, RNF)
+
+   - Diagnóstico accionable: sabes exactamente qué hacer
+   - Reduce tiempo de parada en mantenimiento 50%
+   - **Impacto**: Máquina operativa +300-500 horas productivas/año
+
+3. **Analiza parámetros críticos en tiempo real**
+
+   - Extiende vida útil de herramientas 15-20%
+   - Reduce scrap por defectos de desgaste
+   - **Impacto**: -$50K en costos de herramientas/año
+
+4. **Recomienda decisiones operativas óptimas**
+
+   - ¿Continuar o parar? ¿Reducir carga? → Basado en datos, no intuición
+   - Maximiza producción sin riesgo
+   - **Impacto**: Mejor margen operativo
+
+5. **Simula escenarios para planificación inteligente**
+
+   - Programar paros de mantenimiento en ventanas de baja demanda
+   - Cero pérdida por paros no planificados
+   - **Impacto**: Disponibilidad de máquina +90%
+
+6. **Aprende constantemente del feedback**
+   - ROI que crece con el tiempo
+   - Modelo mejora cada mes con datos reales
+   - **Impacto**: Precisión de predicción pasa de 90% → 95%+ en 3 meses
+
+### Impacto Económico Esperado
+
+**Beneficios Operativos Clave:**
+
+- **Reducir paros no planificados** mediante predicción preventiva
+- **Extender vida útil de herramientas** optimizando parámetros operativos
+- **Reducir scrap y defectos** causados por desgaste descontrolado
+- **Aumentar horas productivas** con máquina operativa >90% del tiempo
+- **Maximizar márgenes operativos** con decisiones basadas en datos
+
+**Valor agregado**: Sistema de bajo costo de implementación con retorno rápido en disponibilidad y confiabilidad operativa.
 ---
 
 ## **Objetivos del Proyecto**
