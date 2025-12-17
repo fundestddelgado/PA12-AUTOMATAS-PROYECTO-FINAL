@@ -4,16 +4,18 @@
 
 **Automatas** es un sistema inteligente de mantenimiento predictivo que utiliza machine learning para anticipar fallos en herramientas y máquinas CNC antes de que ocurran. Mediante el análisis en tiempo real de parámetros operativos (temperatura, velocidad, torque, desgaste), el sistema predice probabilidades de fallo con 5 tipos específicos de fallos y genera recomendaciones accionables para intervenciones proactivas.
 
+**Post-pandemia, los centros CNC no pueden permitirse el lujo de operar con incertidumbre.** Automatas es la herramienta de transformación digital que permite acelerar recuperación mediante inteligencia operativa: reducir paros, optimizar márgenes y construir resiliencia operativa en el nuevo contexto de mercado.
+
 https://newautomatas.streamlit.app/
 
 **Características distintivas**:
 
-- ✅ Diagnóstico multilabel avanzado (5 tipos de fallos simultáneamente)
-- ✅ Calibración inteligente de probabilidades (70% modelo + 30% empírico)
-- ✅ Motor de recomendaciones causales basado en parámetros reales
-- ✅ 6 pestañas interactivas con análisis completo
-- ✅ API REST totalmente funcional
-- ✅ Logging robusto con protección de datos
+- Diagnóstico multilabel avanzado (5 tipos de fallos simultáneamente)
+- Calibración inteligente de probabilidades (70% modelo + 30% empírico)
+- Motor de recomendaciones causales basado en parámetros reales
+- 6 pestañas interactivas con análisis completo
+- API REST totalmente funcional
+- Logging robusto con protección de datos
 
 **Resultado**: Reducción de paros no planificados, optimización de costos operacionales y aumento de disponibilidad de máquinas.
 
@@ -93,6 +95,7 @@ Los centros de mecanizado pequeños y medianos fueron severamente impactados:
 - **Maximizar márgenes operativos** con decisiones basadas en datos
 
 **Valor agregado**: Sistema de bajo costo de implementación con retorno rápido en disponibilidad y confiabilidad operativa.
+
 ---
 
 ## **Objetivos del Proyecto**
