@@ -39,7 +39,7 @@ Si alguien desea probar estos proyectos, sigue estos pasos:
 
 ## ✒️ Autores
 
-- **Automatas**
+**Automatas**
 - Andrea Velasco
 - Julio Lara
 - Iancarlos Anria Castillo
