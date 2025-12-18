@@ -954,7 +954,7 @@ def main():
                 fig_modes.update_layout(title='Probabilidad por tipo de fallo', height=420)
                 st.plotly_chart(fig_modes, use_container_width=True)
 
-                # Solo mostrar recomendaciones si hay riesgo (probabilidad >= 0.3)
+                # Mostrar recomendaciones para TODOS los fallos con probabilidad >= 0.3
                 max_prob = max(valid_mode_probs.values()) if valid_mode_probs else 0
                 
                 if max_prob >= 0.3:
@@ -966,39 +966,43 @@ def main():
                     power_w = base_data['torque_nm'] * omega_rad_s
                     wear_pct = base_data['tool_wear_min'] / 240.0
                     
-                    # Solo mostrar el fallo con mayor probabilidad y una acción específica
-                    top_failure = max(valid_mode_probs.items(), key=lambda x: x[1])
-                    lbl, prob_val = top_failure
+                    # Filtrar y ordenar fallos con probabilidad >= 0.3
+                    significant_failures = [(lbl, prob) for lbl, prob in valid_mode_probs.items() if prob >= 0.3]
+                    significant_failures.sort(key=lambda x: x[1], reverse=True)  # Ordenar por probabilidad descendente
                     
-                    risk_level = '🔴 ALTO RIESGO' if prob_val >= 0.6 else '🟠 RIESGO MODERADO'
-                    
-                    if lbl == 'TWF':
-                        st.warning(f"**{lbl} - {prob_val:.1%} {risk_level}**")
-                        st.markdown(f"Tu desgaste es **{base_data['tool_wear_min']:.0f} min** (límite crítico: 200 min)")
-                        st.markdown(f"**ACCIÓN:** Reemplaza la herramienta")
+                    # Mostrar recomendaciones para TODOS los fallos significativos
+                    for lbl, prob_val in significant_failures:
+                        risk_level = '🔴 ALTO RIESGO' if prob_val >= 0.6 else '🟠 RIESGO MODERADO'
                         
-                    elif lbl == 'HDF':
-                        st.warning(f"**{lbl} - {prob_val:.1%} {risk_level}**")
-                        st.markdown(f"Tu delta térmico es **{delta_temp:.1f} K** (mínimo recomendado: 9 K)")
-                        if delta_temp < 9:
-                            st.markdown(f"**ACCIÓN:** Reduce torque o aumenta RPM para mejorar disipación térmica")
+                        if lbl == 'TWF':
+                            st.warning(f"**{lbl} - {prob_val:.1%} {risk_level}**")
+                            st.markdown(f"Tu desgaste es **{base_data['tool_wear_min']:.0f} min** (límite crítico: 200 min)")
+                            st.markdown(f"**ACCIÓN:** Reemplaza la herramienta")
                             
-                    elif lbl == 'PWF':
-                        st.warning(f"**{lbl} - {prob_val:.1%} {risk_level}**")
-                        st.markdown(f"Tu potencia es **{power_w:.0f} W** (rango seguro: 3,500-9,000 W)")
-                        if power_w < 3500:
-                            st.markdown(f"**ACCIÓN:** Aumenta torque o mantén RPM constante")
-                        elif power_w > 9000:
-                            st.markdown(f"**ACCIÓN:** Reduce torque o aumenta RPM")
+                        elif lbl == 'HDF':
+                            st.warning(f"**{lbl} - {prob_val:.1%} {risk_level}**")
+                            st.markdown(f"Tu delta térmico es **{delta_temp:.1f} K** (mínimo recomendado: 9 K)")
+                            if delta_temp < 9:
+                                st.markdown(f"**ACCIÓN:** Reduce torque o aumenta RPM para mejorar disipación térmica")
+                                
+                        elif lbl == 'PWF':
+                            st.warning(f"**{lbl} - {prob_val:.1%} {risk_level}**")
+                            st.markdown(f"Tu potencia es **{power_w:.0f} W** (rango seguro: 3,500-9,000 W)")
+                            if power_w < 3500:
+                                st.markdown(f"**ACCIÓN:** Aumenta torque o mantén RPM constante")
+                            elif power_w > 9000:
+                                st.markdown(f"**ACCIÓN:** Reduce torque o aumenta RPM")
+                                
+                        elif lbl == 'OSF':
+                            st.warning(f"**{lbl} - {prob_val:.1%} {risk_level}**")
+                            st.markdown(f"Desgaste: **{base_data['tool_wear_min']:.0f} min** ({wear_pct*100:.0f}%) | Torque: **{base_data['torque_nm']:.1f} Nm**")
+                            st.markdown(f"**ACCIÓN:** Reduce carga de trabajo - disminuye torque")
                             
-                    elif lbl == 'OSF':
-                        st.warning(f"**{lbl} - {prob_val:.1%} {risk_level}**")
-                        st.markdown(f"Desgaste: **{base_data['tool_wear_min']:.0f} min** ({wear_pct*100:.0f}%) | Torque: **{base_data['torque_nm']:.1f} Nm**")
-                        st.markdown(f"**ACCIÓN:** Reduce carga de trabajo - disminuye torque")
+                        elif lbl == 'RNF':
+                            st.warning(f"**{lbl} - {prob_val:.1%} {risk_level}**")
+                            st.markdown("**ACCIÓN:** Ejecuta diagnóstico/reset de la máquina CNC. Verifica conexiones de sensores.")
                         
-                    elif lbl == 'RNF':
-                        st.warning(f"**{lbl} - {prob_val:.1%} {risk_level}**")
-                        st.markdown("**ACCIÓN:** Ejecuta diagnóstico/reset de la máquina CNC. Verifica conexiones de sensores.")
+                        st.divider()  # Separador visual entre fallos
 
 
     with tab_sim:
